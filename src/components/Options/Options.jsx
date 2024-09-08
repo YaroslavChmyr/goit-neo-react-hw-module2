@@ -1,11 +1,12 @@
 import css from './Options.module.css'
 
-const Options = () => {
+const Options = ({ totalFeedback, updateGood, updateNeutral, updateBad, reset }) => {
   return (
     <div>
-      <button className={css.button}>Good</button>
-      <button className={css.button}>Neutral</button>
-      <button className={css.button}>Bad</button>
+      <button className={css.button} onClick={updateGood}>Good</button>
+      <button className={css.button} onClick={updateNeutral}>Neutral</button>
+      <button className={css.button} onClick={updateBad}>Bad</button>
+      {totalFeedback > 0 && (<button className={css.button} onClick={reset}>Reset</button>)}
     </div>
   );
 };
